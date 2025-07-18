@@ -1,11 +1,13 @@
-import { defineConfig } from "vite";
-import { vitePlugin as remix } from "@remix-run/dev";
-import { vercelPreset } from "@vercel/remix/vite";
-import tsconfigPaths from "vite-tsconfig-paths";
+const { defineConfig } = require("vite");
+const { vitePlugin: remix } = require("@remix-run/dev");
+const { vercelPreset } = require("@vercel/remix/vite");
+const tsconfigPaths = require("vite-tsconfig-paths");
 
-export default defineConfig({
+module.exports = defineConfig({
   plugins: [
-    remix({ presets: [vercelPreset()] }),
+    remix({
+      presets: [vercelPreset()],
+    }),
     tsconfigPaths(),
   ],
 });
