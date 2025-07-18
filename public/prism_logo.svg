@@ -1,0 +1,161 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Data Analytics inspired color scheme -->
+    <linearGradient id="prismGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1421;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E2A3A;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="prismGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00D2FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3A7BD5;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="prismGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00F5A0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00D9FF;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="prismGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFE66D;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="centerGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#00F5A0;stop-opacity:0.3" />
+    </linearGradient>
+    
+    <!-- Data flow accent gradient -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#A78BFA;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EC4899;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Neural network inspired gradient -->
+    <linearGradient id="neuralGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06FFA5;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00D2FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A78BFA;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Data grid pattern background -->
+    <pattern id="dataGrid" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="0.5" fill="url(#prismGrad3)" opacity="0.1"/>
+    </pattern>
+    
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000000" flood-opacity="0.1"/>
+    </filter>
+    
+    <!-- Subtle glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Logo Symbol Section (Left Side) -->
+  <g transform="translate(100, 100)">
+    <!-- Background circle for context -->
+    <circle cx="0" cy="0" r="70" fill="none" stroke="url(#neuralGrad)" stroke-width="0.8" opacity="0.25"/>
+    
+    <!-- Data grid pattern background -->
+    <circle cx="0" cy="0" r="65" fill="url(#dataGrid)" opacity="0.3"/>
+    
+    <!-- Main prism structure with sophisticated colors -->
+    <!-- Back faces (darker) -->
+    <polygon points="0,-40 30,-10 0,30 -30,-10" 
+             fill="url(#prismGrad1)" 
+             opacity="0.7" 
+             filter="url(#shadow)"/>
+    
+    <!-- Side faces with blue-purple medical/tech gradient -->
+    <polygon points="0,-40 30,-10 30,30 0,60" 
+             fill="url(#prismGrad2)" 
+             opacity="0.85"/>
+    
+    <polygon points="0,-40 -30,-10 -30,30 0,60" 
+             fill="url(#prismGrad3)" 
+             opacity="0.85"/>
+    
+    <polygon points="-30,-10 30,-10 30,30 -30,30" 
+             fill="url(#prismGrad4)" 
+             opacity="0.75"/>
+    
+    <!-- Front face (brightest) -->
+    <polygon points="0,-20 20,-10 0,40 -20,-10" 
+             fill="url(#centerGlow)" 
+             opacity="0.9"
+             filter="url(#glow)"/>
+    
+    <!-- Dynamic data flow lines -->
+    <g opacity="0.8">
+      <!-- Top rays - representing data inputs -->
+      <line x1="0" y1="-40" x2="0" y2="-55" stroke="url(#prismGrad2)" stroke-width="2" opacity="0.9">
+        <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="1;3;1" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="0" y1="-40" x2="-12" y2="-52" stroke="url(#prismGrad3)" stroke-width="1.5" opacity="0.8">
+        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.5s" repeatCount="indefinite"/>
+      </line>
+      <line x1="0" y1="-40" x2="12" y2="-52" stroke="url(#prismGrad4)" stroke-width="1.5" opacity="0.8">
+        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1.8s" repeatCount="indefinite"/>
+      </line>
+      
+      <!-- Side rays - representing insights output -->
+      <line x1="30" y1="-10" x2="45" y2="-18" stroke="url(#accentGrad)" stroke-width="1.5" opacity="0.7">
+        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="30" y1="10" x2="50" y2="10" stroke="url(#neuralGrad)" stroke-width="2.5" opacity="0.8">
+        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1.9s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="1.5;3;1.5" dur="1.9s" repeatCount="indefinite"/>
+      </line>
+      
+      <!-- Left side rays - representing processed analytics -->
+      <line x1="-30" y1="-10" x2="-45" y2="-18" stroke="url(#prismGrad3)" stroke-width="1.5" opacity="0.7">
+        <animate attributeName="opacity" values="0.2;0.7;0.2" dur="2.1s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-30" y1="10" x2="-50" y2="10" stroke="url(#prismGrad2)" stroke-width="2.5" opacity="0.8">
+        <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.3s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-width" values="1.5;3;1.5" dur="2.3s" repeatCount="indefinite"/>
+      </line>
+    </g>
+    
+    <!-- Central core -->
+    <circle cx="0" cy="0" r="12" fill="url(#centerGlow)" opacity="0.8" filter="url(#glow)">
+      <animate attributeName="r" values="10;14;10" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Data visualization points -->
+    <g opacity="0.6">
+      <circle cx="-20" cy="-25" r="1.5" fill="url(#prismGrad2)">
+        <animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="1;2;1" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="25" cy="-20" r="1.2" fill="url(#prismGrad3)">
+        <animate attributeName="opacity" values="0.1;0.8;0.1" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="url(#prismGrad3);url(#prismGrad4);url(#prismGrad3)" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="20" cy="35" r="1.5" fill="url(#neuralGrad)">
+        <animate attributeName="opacity" values="0.2;0.9;0.2" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="-25" cy="30" r="1.2" fill="url(#accentGrad)">
+        <animate attributeName="opacity" values="0.1;0.7;0.1" dur="2.2s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Additional analytics data points -->
+      <circle cx="0" cy="-60" r="0.8" fill="url(#prismGrad2)">
+        <animate attributeName="opacity" values="0;0.6;0" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="35" cy="0" r="1" fill="url(#prismGrad4)">
+        <animate attributeName="opacity" values="0.1;0.5;0.1" dur="3s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Clean analytics logo without text for versatile use -->
+</svg>
